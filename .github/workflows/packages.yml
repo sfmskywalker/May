@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - 'raspberry'
+      - 'test/*'
   release:
     types: [ prereleased ]
 env:
