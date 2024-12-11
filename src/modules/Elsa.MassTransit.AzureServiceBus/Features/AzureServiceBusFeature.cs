@@ -134,6 +134,7 @@ public class AzureServiceBusFeature : FeatureBase
                         return serializerOptions;
                     });
                     
+                    configurator.ConfigureOtelPropagationMiddleware(context);
                     configurator.ConfigureTenantMiddleware(context);
                 });
             };

@@ -98,6 +98,7 @@ public class RabbitMqServiceBusFeature : FeatureBase
                         return serializerOptions;
                     });
                     
+                    configurator.ConfigureOtelPropagationMiddleware(context);
                     configurator.ConfigureTenantMiddleware(context);
                 });
             };

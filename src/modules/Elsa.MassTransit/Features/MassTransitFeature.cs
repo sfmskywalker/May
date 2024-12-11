@@ -157,7 +157,8 @@ public class MassTransitFeature : FeatureBase
             });
 
             if (PrefetchCount != null) bus.PrefetchCount = PrefetchCount.Value;
-
+            
+            bus.ConfigureOtelPropagationMiddleware(context);
             bus.ConfigureTenantMiddleware(context);
         });
     }
