@@ -26,7 +26,7 @@ public class OpenTelemetryTracingWorkflowExecutionMiddleware(WorkflowMiddlewareD
     {
         var workflowInstanceId = context.Id;
         var workflow = context.Workflow;
-        using var span = ElsaOpenTelemetry.ActivitySource.StartActivity("WorkflowExecution", ActivityKind.Internal, new ActivityContext());
+        using var span = ElsaOpenTelemetry.ActivitySource.StartActivity("WorkflowExecution", ActivityKind.Internal, Activity.Current?.Context ?? default);
 
         if (span == null) // No listener is registered.
         {
