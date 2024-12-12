@@ -12,7 +12,7 @@ public class PropagationPublishMiddleware() : IFilter<PublishContext>
 
     public async Task Send(PublishContext context, IPipe<PublishContext> next)
     {
-        context.Headers.Set(DiagnosticHeaders.ActivityPropagation, "Link");
+        context.Headers.Set(DiagnosticHeaders.ActivityPropagation, "New");
         await next.Send(context);
     }
 }

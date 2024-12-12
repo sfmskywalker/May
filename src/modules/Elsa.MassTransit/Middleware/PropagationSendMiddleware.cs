@@ -12,7 +12,7 @@ public class PropagationSendMiddleware() : IFilter<SendContext>
 
     public async Task Send(SendContext context, IPipe<SendContext> next)
     {
-        context.Headers.Set(DiagnosticHeaders.ActivityPropagation, "Link");
+        context.Headers.Set(DiagnosticHeaders.ActivityPropagation, "New");
         await next.Send(context);
     }
 }
